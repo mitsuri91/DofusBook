@@ -88,7 +88,7 @@ INSERT INTO characters (user_id, class_id, name, gender, level) VALUES
 (2, 4, 'Kanae', 'Female', 37),
 (3, 2, 'Sanemi', 'Male', 158),
 (4, 3, 'Mitsuri', 'Female', 80),
-(5, 1, 'Obanai', 'Male', 12);
+(5, 1, 'Obanai', 'Male', 12),
 (4, 2, 'Luna-Eniripsa', 'Female', 65),  
 (5, 4, 'Guts-Iop', 'Male', 150),  
 (1, 6, 'Mystique-Xelor', 'Female', 99),  
@@ -140,7 +140,7 @@ VALUES
 -- insert données character_items
 -- Correction: Les IDs de character doivent être ajustés car il y a maintenant 20 personnages
 -- Ajout d'une mise à jour des IDs pour les références dans les associations
-INSERT INTO character_items (character_id, item_id) VALUES  
+INSERT INTO inventory (character_id, item_id) VALUES  
 (11, 1),  -- Dark-Sram utilise le Marteau du Bouftou
 (11, 3),  -- Il porte aussi l'Anneau de Bouze le Clerc
 (12, 2),  -- Elya-Wynn porte l'Amulette du Bouftou

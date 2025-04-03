@@ -12,6 +12,7 @@ import itemsAction from "./modules/item/itemAction";
 import userActions from "./modules/user/usersAction";
 import categoriesAction from "./modules/categorie/categorieAction";
 import characterActions from "./modules/characters/characterAction";
+import inventoryActions from "./modules/inventory/inventoryAction";
 
 router.get("/api/items", itemsAction.browse);
 router.get("/api/items/:id", itemsAction.read);
@@ -30,6 +31,9 @@ router.get("/api/characters/:id", characterActions.read);
 router.post("/api/characters", characterActions.add);
 router.delete("/api/characters/:id", characterActions.destroy);
 router.put("/api/characters/:id", characterActions.edit);
+
+router.get("/api/inventory", inventoryActions.browse);
+router.get("/api/inventory/:id", inventoryActions.readAllByCaractere);
 
 /* ************************************************************************* */
 
