@@ -19,10 +19,14 @@ const characterRepository = {
 
   async readById(id: number) {
     const [rows] = await databaseClient.query<Rows>(
-      "select * from characters where id = ?",
+      `SELECT c.id, c.user_id, c.class_id, c.name, c.gender, c.level, cl.name AS class_name 
+       FROM characters c
+       LEFT JOIN classes cl ON c.class_id = cl.id
+       WHERE c.user_id = ?`,
       [id],
     );
-    return rows[0] as character;
+
+    return rows as (character & { class_name: string })[];
   },
 
   async create(character: Omit<character, "id">) {
@@ -64,10 +68,6 @@ const characterRepository = {
     );
     return result.affectedRows;
   },
-
-
-
-  
 };
 
 export default characterRepository;

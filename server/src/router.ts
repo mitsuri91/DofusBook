@@ -28,7 +28,7 @@ router.get("/api/categories", categoriesAction.browse);
 
 router.get("/api/characters", characterActions.browse);
 router.get("/api/characters/:id", characterActions.read);
-router.post("/api/characters", characterActions.add);
+router.post("/api/characters/create", characterActions.add);
 router.delete("/api/characters/:id", characterActions.destroy);
 router.put("/api/characters/:id", characterActions.edit);
 
