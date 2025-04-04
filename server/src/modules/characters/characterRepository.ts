@@ -32,7 +32,7 @@ const characterRepository = {
   async create(character: Omit<character, "id">) {
     // Execute the SQL INSERT query to add a new item to the "item" table
     const [result] = await databaseClient.query<Result>(
-      "insert into characters (user_id, class_id, name, gender, level) values (?, ?,?,?,?)",
+      "insert into characters (user_id, class_id, name, gender, level) values (?,?,?,?,?)",
       [
         character.user_id,
         character.class_id,
@@ -56,9 +56,8 @@ const characterRepository = {
 
   async uptade(character: character) {
     const [result] = await databaseClient.query<Result>(
-      "update characters set user_id = ?, class_id = ?, name = ?, gender = ?, level = ? where id = ?",
+      "update characters set class_id = ?, name = ?, gender = ?, level = ?  where id = ?",
       [
-        character.user_id,
         character.class_id,
         character.name,
         character.gender,

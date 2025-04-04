@@ -13,6 +13,7 @@ import userActions from "./modules/user/usersAction";
 import categoriesAction from "./modules/categorie/categorieAction";
 import characterActions from "./modules/characters/characterAction";
 import inventoryActions from "./modules/inventory/inventoryAction";
+import caractereClassAction from "./modules/caractereClass/caractereClassAction";
 
 router.get("/api/items", itemsAction.browse);
 router.get("/api/items/:id", itemsAction.read);
@@ -28,12 +29,15 @@ router.get("/api/categories", categoriesAction.browse);
 
 router.get("/api/characters", characterActions.browse);
 router.get("/api/characters/:id", characterActions.read);
-router.post("/api/characters/create", characterActions.add);
+router.post("/api/characters", characterActions.add);
 router.delete("/api/characters/:id", characterActions.destroy);
-router.put("/api/characters/:id", characterActions.edit);
+router.put("/api/characters/edit/:id", characterActions.edit);
 
 router.get("/api/inventory", inventoryActions.browse);
 router.get("/api/inventory/:id", inventoryActions.readAllByCaractere);
+
+router.get("/api/caractere/classes", caractereClassAction.browse);
+router.get("/api/caractereClasses/:id", caractereClassAction.readById);
 
 /* ************************************************************************* */
 

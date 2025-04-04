@@ -12,6 +12,8 @@ import Caractere from "./pages/caractere/Caractere";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
+import CreateCaractere from "./pages/createCaractere/createCaractere";
+import CreatePersonnage from "./pages/createPersonnage/CreatePersonnage";
 
 // import About from "./pages/About";
 // import Contact from "./pages/Contact";
@@ -32,6 +34,14 @@ const router = createBrowserRouter([
       {
         path: "/caractere/:id",
         element: <Caractere />,
+      },
+      {
+        path: "/createCaractere/1",
+        element: <CreateCaractere />,
+      },
+      {
+        path: "/createPersonnage",
+        element: <CreatePersonnage />,
       },
     ],
   },

@@ -63,7 +63,7 @@ const destroy: RequestHandler = async (req, res, next) => {
 };
 
 const edit: RequestHandler = async (req, res, next) => {
-  // Fetch a specific item based on the provided ID
+  console.info(req.body);
   try {
     const character = {
       id: Number(req.params.id),
@@ -73,6 +73,7 @@ const edit: RequestHandler = async (req, res, next) => {
       gender: req.body.gender,
       level: req.body.level,
     };
+    console.info(character);
     const affectedRows = await characterRepository.uptade(character);
     if (affectedRows === 0) {
       res.sendStatus(422);
